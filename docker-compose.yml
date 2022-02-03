@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  callApp:
+    image: call-app
+    build: 
+      context: .
+    volumes:
+      - endpoints.json:endpoints.json
+
+
