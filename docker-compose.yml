@@ -3,8 +3,8 @@ services:
   callApp:
     image: call-app
     build: 
-      context: .
+      context: ./CallApp
     volumes:
-      - ./:/app
+      - ./CallApp/:/app
 
 
