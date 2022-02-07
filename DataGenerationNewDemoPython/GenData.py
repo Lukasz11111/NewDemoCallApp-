@@ -8,26 +8,155 @@ import SecretOperation
 
 class  IdentityCompanyName(tornado.web.RequestHandler):
     def get(self):
-        SecretOperation.saveData(self.get_query_argument("scan_amount"),self.get_query_argument("increased_traffic"),self.get_query_argument("minimal_area"))
-        raise Exception("No way home")
-        self.write("Hello, world")
+        SecretOperation.saveData(self)
+        self.write("Done")
 
 class  IdentityPerson(tornado.web.RequestHandler):
     def get(self):
-        SecretOperation.saveData(self.get_query_argument("scan_amount"),self.get_query_argument("increased_traffic"),self.get_query_argument("minimal_area"))
-        self.write("Hello, world")
+        SecretOperation.saveData(self)
+        self.write("Done")
+        
+class  IdentityPersonAddress(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
 
+class  NameCategories(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
 
-# identity_person
-# identity_person_address
-# identity​_person​_name​_first
-# name_categories
-# trivia_search
-# barcode_encode_types
-# barcode_decode_types
-# ​qrcode​_business_card
-# qrcode_skype
-# qrcode_sms
-# qrcode_url
-# qrcode​_raw
+class  TriviaSearch(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
 
+class  BarcodeEncodeTypes(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+        
+class  CarcodeDecodeTypes(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  QrcodeBusinessCard(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  QrcodeSkype(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  QrcodeSms(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+        
+class  QrcodeUrl(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  QrcodeRaw(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  TotalCollectors(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  ForgettingRegressionLists(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  DataRecession(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  SharingInputs(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  SegregationOfStaticFiles(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  TotalQuestionTime(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  InternalMemoryEvaluation(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  CollectionOfPrefallState(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  AddingNewThreads(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  TurningOffUnnecessaryResources(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  CountingBreaks(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  SendingStates(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  ShowAllPreliminaryPossibilities(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  ReadDataTransformationLogs(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  DatabaseBackupOfAllFirstOccurrences(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  DockContainers(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  StateStates(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+
+class  DetermineTheVitalityOfTheImages(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")
+             
+class  EstimateWeightedMean(tornado.web.RequestHandler):
+    def get(self):
+        SecretOperation.saveData(self)
+        self.write("Done")

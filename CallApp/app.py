@@ -15,6 +15,8 @@ def getData():
 
 def request_task(url, headers):
     try:
+        session = requests.Session()
+        session.trust_env = False
         requests.get(url, verify=False, timeout=60)
     except Exception as e:
         print(e)
@@ -55,12 +57,19 @@ async def callfn(data):
         await req(data, 0,"endpoints","callCount")
         await req(data, 0,"longEndpoints","callCountLong")
 
+
 async def main():
+    lognStopIt=0
     while True:
         data=getData()
         await callfn(data)
         sleepTime=randomSleepTime()
         print(f"Wait {sleepTime} s", flush=True)
+        if lognStopIt==13:
+            sleepTime=sleepTime+90
+            lognStopIt=0
+        else:
+            lognStopIt=lognStopIt+1
         time.sleep(sleepTime)
 
 asyncio.run(main()) 

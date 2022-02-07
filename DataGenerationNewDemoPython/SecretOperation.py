@@ -1,27 +1,30 @@
 from time import sleep
-import yaml
 import random
 import revdebug
-@revdebug.norecord
-def yanlOpen():
-    with open("option.yaml", "r") as stream:
-        try:
-            return yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
+
 
 @revdebug.norecord
 def randomTime(scanAmount,increasedTraffic,minimalArea):
-    yaml_=yanlOpen()
-    
     result=random.randint(int(minimalArea),int(scanAmount))
     result=result+int(increasedTraffic)
+    if 3==random.randint(0,10):
+        result=result+750
     
     return int(result)
 @revdebug.norecord
-def saveData(scanAmount=100,increasedTraffic=0, minimalArea=0):
+def saveData(self):
     # ms
     try:
-        sleep(randomTime(scanAmount,increasedTraffic,minimalArea)/1000)
-    except:
+        time=randomTime(self.get_query_argument("scan_amount"),self.get_query_argument("increased_traffic"),self.get_query_argument("minimal_area"))
+        sleep(time/1000)
+    except Exception as e:
+        print(e, flush=True)
         pass
+
+    if int(self.get_query_argument("CountActiveArea"))>1000:
+        if 3==random.randint(0,5):
+            a=[]
+            a[1000]="err"
+
+
+
