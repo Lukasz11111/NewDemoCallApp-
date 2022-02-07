@@ -19,15 +19,17 @@ services:
         REVDEBUG_FORCE_TLS:  ${REVDEBUG_FORCE_TLS:-true}
     volumes:
       - ./DataGenerationNewDemoPython:/app
-    networks:
-          default:
-              ipv4_address: 172.16.238.10 
-
-
-networks:
-    default:
-        driver: bridge
-        ipam:
-          config:
-              - subnet: 172.16.238.0/24
+  selenium-standalone-chrome:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+      - 7900:7900
+      - 80:80
+  web:
+    build: 
+      context: selenium_app/
+    image: selenium-app
+    ports: 
+      - 8080:8080
+    command: uvicorn --host=0.0.0.0 --port=8080 main:app
 
