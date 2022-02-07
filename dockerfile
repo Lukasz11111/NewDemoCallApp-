@@ -1,6 +1,8 @@
 FROM  python:3.9
 
-COPY app.py .
+WORKDIR /app
 
-RUN pip3 install requests
-CMD python callMeBabe.py
+RUN pip install requests \
+    pip install asyncio  \
+    pip install aiohttp
+CMD python app.py

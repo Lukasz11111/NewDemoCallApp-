@@ -1,8 +1,11 @@
 from random import randint, choice
+import asyncio
 import requests
+import aiohttp
 import time
-
+from datetime import datetime
 import json
+import threading
 
 def getData():
     f = open('endpoints.json')
@@ -10,23 +13,53 @@ def getData():
     f.close()
     return data
 
-def randomCall():
+def request_task(url, headers):
+    try:
+        requests.get(url, verify=False, timeout=60)
+    except:
+        pass
+
+def fire_and_forget(url, headers=None):
+    threading.Thread(target=request_task, args=(url, headers)).start()
+
+def randomCall(type_):
     data=getData()
-    return randint(1,data["callCount"])
+    return randint(1,data[type_])
 
 def randomSleepTime():
     data=getData()
     return randint(data["minTimeSleep"],data["maxTimeSleep"])
 
-def main():
+async def req(data, traffic,type_, callType):
+    try:
+        timeout = aiohttp.ClientTimeout(total=60)
+        calls=int(randomCall(callType)+int(randomCall(callType)*traffic))
+        for x in range(0,calls):
+            endpoint=choice(data[type_])
+            request_task(endpoint, headers=None)
+            # print(f"Type {type_}  endpoint {endpoint}", flush=True)
+        print(f"Calls {calls}  type {type_}", flush=True)
+    except Exception as e: 
+        print(f"Err {e}", flush=True)
+
+
+async def callfn(data):
+    
+    if datetime.now().hour in data["increasedTrafficHours"]:
+        print(f"Traffic houer on", flush=True)
+        await req(data, 1,"endpoints","callCount")
+        await req(data, 1.5,"longEndpoints", "callCountLong")
+    else:
+        print(f"Normal houer on", flush=True)
+        await req(data, 0,"endpoints","callCount")
+        await req(data, 0,"longEndpoints","callCountLong")
+
+async def main():
     while True:
         data=getData()
-        for x in range(0,randomCall()):
-            endpoint=choice(data["endpoints"])
-            requests.get(endpoint, verify=False, timeout=30)
-            print(endpoint)
+        await callfn(data)
         sleepTime=randomSleepTime()
-        print(f"Wait {sleepTime} s")
+        print(f"Wait {sleepTime} s", flush=True)
         time.sleep(sleepTime)
 
-main()
+asyncio.run(main()) 

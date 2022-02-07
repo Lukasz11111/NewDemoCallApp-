@@ -5,6 +5,6 @@ services:
     build: 
       context: .
     volumes:
-      - endpoints.json:endpoints.json
+      - ./:/app
 
 
