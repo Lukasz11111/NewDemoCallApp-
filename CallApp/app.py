@@ -16,8 +16,8 @@ def getData():
 def request_task(url, headers):
     try:
         requests.get(url, verify=False, timeout=60)
-    except:
-        pass
+    except Exception as e:
+        print(e)
 
 def fire_and_forget(url, headers=None):
     threading.Thread(target=request_task, args=(url, headers)).start()
@@ -37,6 +37,7 @@ async def req(data, traffic,type_, callType):
         for x in range(0,calls):
             endpoint=choice(data[type_])
             request_task(endpoint, headers=None)
+            print(endpoint)
             # print(f"Type {type_}  endpoint {endpoint}", flush=True)
         print(f"Calls {calls}  type {type_}", flush=True)
     except Exception as e: 

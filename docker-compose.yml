@@ -19,5 +19,15 @@ services:
         REVDEBUG_FORCE_TLS:  ${REVDEBUG_FORCE_TLS:-true}
     volumes:
       - ./DataGenerationNewDemoPython:/app
+    networks:
+          default:
+              ipv4_address: 172.16.238.10 
 
+
+networks:
+    default:
+        driver: bridge
+        ipam:
+          config:
+              - subnet: 172.16.238.0/24
 
