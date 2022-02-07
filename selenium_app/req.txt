@@ -1,0 +1,7 @@
+requests==2.26.0
+fastapi==0.72.0
+selenium==4.1.0
+Twiggy==0.5.1
+uvicorn==0.17.2
+packaging==20.9
+
