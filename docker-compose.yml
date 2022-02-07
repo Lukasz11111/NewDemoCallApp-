@@ -6,5 +6,18 @@ services:
       context: ./CallApp
     volumes:
       - ./CallApp/:/app
+  data-generation:
+    image: data-generation
+    build: 
+      context: ./DataGenerationNewDemoPython
+      args: 
+        REVDEBUG_PYTHON_VERSION: 3.9
+    ports:
+      - 7000:7000
+    environment:
+        REVDEBUG_HOST: ${REVDEBUG_HOST:-newdemo.revdebug.com}
+        REVDEBUG_FORCE_TLS:  ${REVDEBUG_FORCE_TLS:-true}
+    volumes:
+      - ./DataGenerationNewDemoPython:/app
 
 
