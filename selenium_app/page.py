@@ -20,7 +20,7 @@ def _path(p1: Dict[str, int], p2: Dict[str, int], k: int) -> (List[int], List[in
 
     def _path_for_one_cord(cord: int):
         return [
-            int(-(p2[cord] - p1[cord]) / abs(p2[cord] - p1[cord]) * e) for e in
+            int((p2[cord] - p1[cord]) / abs(p2[cord] - p1[cord]) * e) for e in
             Counter(randint(1, k + 1) for _ in range(abs(p2[cord] - p1[cord]))).values()
         ]
 
