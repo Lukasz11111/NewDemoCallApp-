@@ -1,8 +1,8 @@
 {
-    "minTimeSleep": 30,
-    "maxTimeSleep": 60,
-    "callCount": 20,
-    "callCountLong": 2,
+    "minTimeSleep": 100,
+    "maxTimeSleep": 180,
+    "callCount": 15,
+    "callCountLong": 4,
     "increasedTrafficHours": [3,13,15,18,6],
     "endpoints": [
         "http://data-generation:7000/IdentityCompanyName?scan_amount=100&increased_traffic=100&minimal_area=0&CountActiveArea=453",
@@ -39,6 +39,18 @@
         "http://data-generation:7000/StateStates?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=423",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
-        "http://web:8080/generate_trace"
+        "http://web:8080/generate_trace",
+        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-rdb.azurewebsites.net/api/datafill",
+        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-rdb.azurewebsites.net/api/datafill",
+        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-rdb.azurewebsites.net/api/datafill"
     ]
 }
