@@ -39,7 +39,6 @@ async def req(data, traffic,type_, callType):
         for x in range(0,calls):
             endpoint=choice(data[type_])
             request_task(endpoint, headers=None)
-            print(endpoint)
             # print(f"Type {type_}  endpoint {endpoint}", flush=True)
         print(f"Calls {calls}  type {type_}", flush=True)
     except Exception as e: 
@@ -65,7 +64,7 @@ async def main():
         await callfn(data)
         sleepTime=randomSleepTime()
         print(f"Wait {sleepTime} s", flush=True)
-        if lognStopIt==13:
+        if lognStopIt==10:
             sleepTime=sleepTime+90
             lognStopIt=0
         else:
