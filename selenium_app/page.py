@@ -1,35 +1,89 @@
+from collections import Counter
+from random import randint
 from time import sleep
+from typing import Dict, List
 
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
+from selenium.webdriver.remote.webelement import WebElement
+from twiggy import log
 
 from settings import REMOTE_DRIVER, ENDING_SLEEPING_TIME
-from spring import spring
+
+
+def _path(p1: Dict[str, int], p2: Dict[str, int], k: int) -> (List[int], List[int],):
+    """
+    p1, p2: points {"x": int, "y": int}
+    k: number of subpoints in path
+    Return list of offsets from p1 to p2 with random distribution.
+    """
+
+    def _path_for_one_cord(cord: int):
+        return [
+            int(-(p2[cord] - p1[cord]) / abs(p2[cord] - p1[cord]) * e) for e in
+            Counter(randint(1, k + 1) for _ in range(abs(p2[cord] - p1[cord]))).values()
+        ]
+
+    return zip(_path_for_one_cord("x"), f("y"))
 
 
 class Page:
 
     def __init__(self, url: str):
-        self._driver = None
-        self.url = url
+        self.account: WebElement = None
+        self.about: WebElement = None
+        self.header: WebElement = None
+        self.select: WebElement = None
+        self.number_input: WebElement = None
+        self.button: WebElement = None
+        self._driver: webdriver = None
+        self.url: str = url
+
+    def move(self, begin: WebElement, end: WebElement, subpoints: int = 10, time: float = 0.1):
+        """Move from begin webelement to end webelement in 10 setes in 0.1s"""
+        log.debug(F"Move from {begin} to {end}")
+        sleep_time = time / subpoints
+        action_chains = webdriver.ActionChains(self._driver)
+        for x, y in _path({"x": begin.location["x"] + begin.size["width"] // 2,
+                           "y": begin.location["y"] + begin.size["height"] // 2},
+                          {"x": end.location["x"] + end.size["width"] // 2,
+                           "y": end.location["y"] + end.size["height"] // 2},
+                          subpoints):
+            action_chains.move_by_offset(x, y).pause(sleep_time)
+        action_chains.move_to_element(end).pause(sleep_time)
+        action_chains.perform()
+
+    def click(self):
+        webdriver.ActionChains(self._driver).click().perform()
+
+    def move_to_account(self):
+        webdriver.ActionChains(self._driver).move_to_element(self.account).perform()
+
+    def fill_number(self):
+        sleep(1)
+        for i in range(1, 10):
+            self.number_input.send_keys(str(i))
+            sleep(.2)
+        sleep(1)
 
     def __enter__(self):
+        log.debug("Enter Page >>>>>>>>>>>>>>")
         self._driver = webdriver.Remote(REMOTE_DRIVER,
                                         DesiredCapabilities.CHROME)
         self._driver.get(self.url)
+        self._set_webelements()
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         sleep(ENDING_SLEEPING_TIME)
         self._driver.close()
         self._driver.quit()
+        log.debug("Exit Page >>>>>>>>>>>>>>")
 
-    def x(self):
-        for x, y in spring():
-            webdriver.ActionChains(self._driver).move_by_offset(x, y).perform()
-            webdriver.ActionChains(self._driver).click()
-            sleep(0.25)
-
-    def y(self):
-        self._driver.find_element_by_id("minvalue").send_keys("8888888")
-        self._driver.find_element_by_id("send").click()
+    def _set_webelements(self):
+        self.account = self._driver.find_element_by_link_text("Accounts")
+        self.about = self._driver.find_element_by_link_text("About")
+        self.header = self._driver.find_element_by_tag_name("h2")
+        self.select = self._driver.find_element_by_tag_name("select")
+        self.number_input = self._driver.find_element_by_id("minvalue")
+        self.button = self._driver.find_element_by_id("send")

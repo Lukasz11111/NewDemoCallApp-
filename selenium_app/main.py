@@ -8,7 +8,7 @@ Docker with selenium driver have to be running. For example:
 <code>docker run -it -p {REMOTE_DRIVER_PORT}:{REMOTE_DRIVER_PORT} -p 7900:7900 --shm-size="2g"  
 selenium/standalone-chrome</code>
 """
-from time import time
+from time import time, sleep
 from typing import Optional
 
 from fastapi import FastAPI
@@ -31,8 +31,16 @@ async def generate_trace(url: Optional[str] = DEFAULT_URL):
     start = time()
     log.debug("generate_trace({url} start at {start}", url=url, start=start)
     with Page(url) as page:
-        page.x()
-        page.y()
+        page.move_to_account()
+        page.move(page.account, page.about)
+        page.move(page.about, page.header) and sleep(0.5)
+        page.move(page.header, page.select) and sleep(1)
+        page.click() and sleep(1)
+        page.move(page.select, page.number_input) and sleep(1)
+        page.click()
+        page.fill_number()
+        page.move(page.number_input, page.button)
+        page.click()
     end = time()
     log.debug(F"generate_trace({url} end at {start} in {end - start}")
     return {"url": url, "time": end - start}
