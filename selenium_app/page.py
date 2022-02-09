@@ -1,14 +1,19 @@
 from collections import Counter
-from random import randint
+from random import randint, gauss
 from time import sleep
 from typing import Dict, List
 
 from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.webelement import WebElement
 from twiggy import log
 
 from settings import REMOTE_DRIVER, ENDING_SLEEPING_TIME
+
+
+def randint(a, b):
+    return min(max(int(gauss((a + b) * 3/4, (a - b) / 2)), a), b)
 
 
 def _path(p1: Dict[str, int], p2: Dict[str, int], k: int) -> (List[int], List[int],):
@@ -53,6 +58,13 @@ class Page:
         action_chains.move_to_element(end).pause(sleep_time)
         action_chains.perform()
 
+    def select_many_times_options(self):
+        action_chains = webdriver.ActionChains(self._driver)
+        action_chains.move_by_offset(15, -60).pause(0.25).click().pause(0.25)
+        action_chains.move_by_offset(-10, 30).pause(0.25).click().pause(0.25)
+        action_chains.move_by_offset(10, 90).pause(0.25).click().pause(0.25)
+        action_chains.perform()
+
     def click(self):
         webdriver.ActionChains(self._driver).click().perform()
 
@@ -61,7 +73,7 @@ class Page:
 
     def fill_number(self):
         sleep(1)
-        for i in range(1, 10):
+        for i in "1099" + 2 * Keys.BACKSPACE + "000099":
             self.number_input.send_keys(str(i))
             sleep(.2)
         sleep(1)
