@@ -33,14 +33,17 @@ async def generate_trace(url: Optional[str] = DEFAULT_URL):
     with Page(url) as page:
         page.move_to_account()
         page.move(page.account, page.about)
-        page.move(page.about, page.header) and sleep(0.5)
-        page.move(page.header, page.select) and sleep(1)
-        page.click() and sleep(1)
+        # page.move(page.about, page.header, subpoints=4, time=0) and sleep(0.5)
+        # page.move(page.header, page.select) and sleep(1)
+        page.move(page.account, page.select) and sleep(1)
+
+        page.select_many_times_options()
         page.move(page.select, page.number_input) and sleep(1)
         page.click()
         page.fill_number()
-        page.move(page.number_input, page.button)
-        page.click()
+        page.move(page.number_input, page.button, subpoints=3, time=0)
+        page.click().pause(.5)
+        page.move(page.button, page.header, subpoints=3, time=0)
     end = time()
     log.debug(F"generate_trace({url} end at {start} in {end - start}")
     return {"url": url, "time": end - start}
