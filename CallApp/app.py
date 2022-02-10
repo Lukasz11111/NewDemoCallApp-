@@ -44,6 +44,14 @@ async def req(data, traffic,type_, callType):
     except Exception as e: 
         print(f"Err {e}", flush=True)
 
+async def reqConst(data):
+    try:
+        for x in data["Const"]:
+            request_task(x, headers=None)
+        print(f"Calls {x}  type Const", flush=True)
+    except Exception as e: 
+        print(f"Err {e}", flush=True)
+
 
 async def callfn(data):
     
@@ -51,11 +59,12 @@ async def callfn(data):
         print(f"Traffic houer on", flush=True)
         await req(data, 1,"endpoints","callCount")
         await req(data, 1.5,"longEndpoints", "callCountLong")
+        await reqConst(data)
     else:
         print(f"Normal houer on", flush=True)
         await req(data, 0,"endpoints","callCount")
         await req(data, 0,"longEndpoints","callCountLong")
-
+        await reqConst(data)
 
 async def main():
     lognStopIt=0

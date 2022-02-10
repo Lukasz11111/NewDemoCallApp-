@@ -19,4 +19,4 @@ ENV REVDEBUG_SOLUTION=IndexingMonthlyReports \
  REVDEBUG_FORCE_TLS=$REVDEBUG_FORCE_TLS
 
 
-CMD python app.py
+CMD python DataGenerationNewDemoPython/app.py

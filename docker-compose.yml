@@ -9,7 +9,8 @@ services:
   data-generation:
     image: data-generation
     build: 
-      context: ./DataGenerationNewDemoPython
+      context: .
+      dockerfile: ./DataGenerationNewDemoPython/Dockerfile
       args: 
         REVDEBUG_PYTHON_VERSION: 3.9
     ports:
@@ -18,7 +19,7 @@ services:
         REVDEBUG_HOST: ${REVDEBUG_HOST:-newdemo.revdebug.com}
         REVDEBUG_FORCE_TLS:  ${REVDEBUG_FORCE_TLS:-true}
     volumes:
-      - ./DataGenerationNewDemoPython:/app
+      - .:/app
   selenium-standalone-chrome:
     image: selenium/standalone-chrome
     ports:

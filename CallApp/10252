@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details - RevDeBug Invoices</title>
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Content/Site.css" />
+</head>
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href='/Invoices'>
+                    <img class="logo" src="/Images/InvoicesLogo.png" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href='/'>
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span><br />Accounts
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/'>
+                            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span><br />Contacts
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/Invoices'>
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><br />Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/'>
+                            <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span><br />Payments
+                        </a>
+                    </li>
+                    <li>
+                        <a href='/'>
+                            <span class="glyphicon glyphicon-book" aria-hidden="true"></span><br />About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            
+ 
+<div class="col-lg-9">
+    <div class="body-content"> 
+        <div class="row">
+            <h2>Details </h2>
+            <h4>Order 10252 <a class="help" href="#">help <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a> </h4>
+
+        </div>
+
+
+        <div class="row">
+            <hr />
+            <table class="table tableInvoiceDetails">
+                <tr>
+                    <th th width="100">
+                        Contractor
+                    </th>
+                    <td>
+                        
+                        
+                    </td>
+                    <th width="100">
+                        Issue Date
+                    </th>
+                    <td width="100">
+                        07/09/1996 00:00:00
+                    </td>
+
+                </tr>
+                <tr>
+                    <th></th>
+                    <td></td>
+
+                    <th>
+                        Due Date
+                    </th>
+                    <td>
+                        08/06/1996 00:00:00
+                    </td>
+                </tr>
+            </table>
+            <table class="table tableProducts">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Cateregory</th>
+                        <th>Unit Price</th>
+                        <th>Quantity per unit</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>
+                                Sir Rodney&#x27;s Marmalade
+                            </td>
+                            <td>
+                                Confections
+                            </td>
+                            <td>
+                                $
+                                81
+                                
+                            </td>
+                            <td>
+                                30 gift boxes
+                            </td>
+                            <td>
+                                40
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Geitost
+                            </td>
+                            <td>
+                                Dairy Products
+                            </td>
+                            <td>
+                                $
+                                2.5
+                                
+                            </td>
+                            <td>
+                                500 g
+                            </td>
+                            <td>
+                                25
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Camembert Pierrot
+                            </td>
+                            <td>
+                                Dairy Products
+                            </td>
+                            <td>
+                                $
+                                34
+                                
+                            </td>
+                            <td>
+                                15 - 300 g rounds
+                            </td>
+                            <td>
+                                40
+                            </td>
+                        </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td></td>
+                        <td><a href="../Reconcile/10252">Accept Order</a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <th>Total Bill</th>
+                        <td> $ 4662.5   </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <p>
+            <button class="btn btn-default btnDetails btnBack"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span><a href="/Invoices">Back to List</a></button>
+
+        </p>
+
+    </div>
+</div>
+
+<div class="col-lg-3">
+<div class="leftMenu">
+
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </span>
+    </div>
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a data-toggle="collapse" href="#createItems">
+                    <h4 class="panel-title">
+                        Create New <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="createItems" class="panel-collapse collapse">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">Order</a></li>
+                    <li class="list-group-item"><a href="#">Payment</a></li>
+                    <li class="list-group-item"><a href="#">Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a data-toggle="collapse" href="#recentInvoices">
+                    <h4 class="panel-title">
+                        Recent Orders <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+                    </h4>
+                </a>
+            </div>
+            <div id="recentInvoices" class="panel-collapse collapse">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">135/ST/GD/05/2017</a></li>
+                    <li class="list-group-item"><a href="#">222/ST/2017</a></li>
+                    <li class="list-group-item"><a href="#">88/SU/05/2017</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <button class="btn btn-default btnDetails">Edit</button>
+    <button class="btn btn-default btnDetails btnDelete">Delete</button>
+
+</div>
+</div>
+ 
+
+
+        </div>
+    </div>
+
+
+    <div class="overlay">
+        nioh
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>&copy; 2022 - RevDeBug</p>
+                </div>
+                <div class="col-lg-6">
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/Scripts/invoices.js"></script>
+     
+</body>
+</html>
