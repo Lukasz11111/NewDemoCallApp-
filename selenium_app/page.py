@@ -63,6 +63,7 @@ class Page:
         action_chains.move_by_offset(15, -60).pause(0.25).click().pause(0.25)
         action_chains.move_by_offset(-10, 30).pause(0.25).click().pause(0.25)
         action_chains.move_by_offset(10, 90).pause(0.25).click().pause(0.25)
+        action_chains.move_by_offset(10, -160).pause(0.25).click().pause(0.25)
         action_chains.perform()
 
     def click(self):
@@ -73,7 +74,7 @@ class Page:
 
     def fill_number(self):
         sleep(1)
-        for i in "1099" + 2 * Keys.BACKSPACE + "000099":
+        for i in "14000" + 5 * Keys.BACKSPACE + "15000":
             self.number_input.send_keys(str(i))
             sleep(.2)
         sleep(1)

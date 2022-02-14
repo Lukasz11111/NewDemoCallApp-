@@ -42,7 +42,7 @@ async def generate_trace(url: Optional[str] = DEFAULT_URL):
         page.click()
         page.fill_number()
         page.move(page.number_input, page.button, subpoints=3, time=0)
-        page.click().pause(.5)
+        page.click()
         page.move(page.button, page.header, subpoints=3, time=0)
     end = time()
     log.debug(F"generate_trace({url} end at {start} in {end - start}")
