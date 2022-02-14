@@ -1,6 +1,0 @@
---2022-02-08 12:18:03--  http://data-generation:7000/IdentityPersonAddress?scan_amount=350
-Resolving data-generation (data-generation)... 172.22.0.2
-Connecting to data-generation (data-generation)|172.22.0.2|:7000... connected.
-HTTP request sent, awaiting response... 400 Bad Request
-2022-02-08 12:18:03 ERROR 400: Bad Request.
-
