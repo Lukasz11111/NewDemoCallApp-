@@ -1,0 +1,84 @@
+{
+    "minTimeSleep": 200,
+    "maxTimeSleep": 320,
+    "callCount": 20,
+    "callCountLong": 4,
+    "increasedTrafficHours": [
+        3,
+        13,
+        15,
+        18,
+        6
+    ],
+    "endpoints": [
+        "http://data-generation:7000/IdentityCompanyName?scan_amount=100&increased_traffic=100&minimal_area=0&CountActiveArea=453",
+        "http://data-generation:7000/IdentityPerson?scan_amount=400&increased_traffic=50&minimal_area=50&CountActiveArea=345",
+        "http://data-generation:7000/IdentityPersonAddress?scan_amount=350&increased_traffic=0&minimal_area=75&CountActiveArea=1001",
+        "http://data-generation:7000/NameCategories?scan_amount=100&increased_traffic=200&minimal_area=25&CountActiveArea=657",
+        "http://data-generation:7000/TriviaSearch?scan_amount=450&increased_traffic=50&minimal_area=10&CountActiveArea=45",
+        "http://data-generation:7000/BarcodeEncodeTypes?scan_amount=250&increased_traffic=0&minimal_area=0&CountActiveArea=967",
+        "http://data-generation:7000/CarcodeDecodeTypes?scan_amount=50&increased_traffic=100&minimal_area=10&CountActiveArea=564",
+        "http://data-generation:7000/QrcodeBusinessCard?scan_amount=150&increased_traffic=30&minimal_area=100&CountActiveArea=657",
+        "http://data-generation:7000/IdentityCompanyName?scan_amount=100&increased_traffic=45&minimal_area=0&CountActiveArea=123",
+        "http://data-generation:7000/QrcodeSkype?scan_amount=50&increased_traffic=20&minimal_area=0&CountActiveArea=976",
+        "http://data-generation:7000/QrcodeSms?scan_amount=100&increased_traffic=-20&minimal_area=0&CountActiveArea=123",
+        "http://data-generation:7000/QrcodeUrl?scan_amount=150&increased_traffic=0&minimal_area=0&CountActiveArea=684",
+        "http://data-generation:7000/QrcodeRaw?scan_amount=150&increased_traffic=0&minimal_area=0&CountActiveArea=108",
+        "http://data-generation:7000/ForgettingRegressionLists?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=876",
+        "http://data-generation:7000/DataRecession?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=274",
+        "http://data-generation:7000/SharingInputs?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=742",
+        "http://data-generation:7000/SegregationOfStaticFiles?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=834",
+        "http://data-generation:7000/TotalQuestionTime?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=740",
+        "http://data-generation:7000/InternalMemoryEvaluation?scan_amount=400&increased_traffic=80&minimal_area=2&CountActiveArea=958"
+    ],
+    "longEndpoints": [
+        "http://data-generation:7000/CollectionOfPrefallState?scan_amount=1000&increased_traffic=-200&minimal_area=450&CountActiveArea=123",
+        "http://data-generation:7000/AddingNewThreads?scan_amount=500&increased_traffic=250&minimal_area=350&CountActiveArea=753",
+        "http://data-generation:7000/TurningOffUnnecessaryResources?scan_amount=650&increased_traffic=200&minimal_area=10&CountActiveArea=743",
+        "http://data-generation:7000/CountingBreaks?scan_amount=350&increased_traffic=450&minimal_area=120&CountActiveArea=643",
+        "http://data-generation:7000/SendingStates?scan_amount=900&increased_traffic=-200&minimal_area=0&CountActiveArea=1300",
+        "http://data-generation:7000/ShowAllPreliminaryPossibilities?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=673",
+        "http://data-generation:7000/ShowAllPreliminaryPossibilities?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=235",
+        "http://data-generation:7000/EstimateWeightedMean?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=754",
+        "http://data-generation:7000/DetermineTheVitalityOfTheImages?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=532",
+        "http://data-generation:7000/StateStates?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=423",
+        "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
+        "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly"
+    ],
+    "Const": [
+        {
+            "url": "http://3.65.26.83:6012/Invoices/Reconcile/$$id$$",
+            "id": ["10248","10249","10250","10251","10252","10253","10254","10255","10256","10257"]
+        },
+        {
+            "url": "http://3.65.26.83:6013/invoices"
+        },
+        {
+            "url": "http://3.65.26.83:6013/invoices/$$id$$/details",
+            "id": ["1","2","3"]
+        },
+        {
+            "url": "http://3.65.26.83:6013/invoices/$$id$$/reconcile/",
+            "id": ["1","2","3"]
+        },
+        {
+            "url": "http://3.65.26.83:6013/getval"
+        },
+        {
+            "url": "http://web:8080/generate_trace?url=https://storageaccountlmlivbbb0.z28.web.core.windows.net/"
+        }
+    ]
+}
