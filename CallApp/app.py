@@ -17,6 +17,7 @@ def request_task(url, headers):
     try:
         session = requests.Session()
         session.trust_env = False
+        time.sleep(3)
         requests.get(url, verify=False, timeout=60)
     except Exception as e:
         print(e)

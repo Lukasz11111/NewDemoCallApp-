@@ -1,8 +1,8 @@
 {
-    "minTimeSleep": 160,
-    "maxTimeSleep": 280,
-    "callCount": 15,
-    "callCountLong": 3,
+    "minTimeSleep": 200,
+    "maxTimeSleep": 320,
+    "callCount": 20,
+    "callCountLong": 4,
     "increasedTrafficHours": [3,13,15,18,6],
     "endpoints": [
         "http://data-generation:7000/IdentityCompanyName?scan_amount=100&increased_traffic=100&minimal_area=0&CountActiveArea=453",
@@ -39,25 +39,28 @@
         "http://data-generation:7000/StateStates?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=423",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
-        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
-         "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly"
-
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
+         "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly"
       
 
     ],
     "Const": [
-        "http://3.69.48.124:6012/Invoices/Details/10252",
-        "http://web:8080/generate_trace"
+        "http://3.65.26.83:6012/Invoices/Reconcile/10251",
+        "http://3.65.26.83:6013/invoices",
+        "http://3.65.26.83:6013/invoices/1/details",
+        "http://3.65.26.83:6013/invoices/1/reconcile/",
+        "http://3.65.26.83:6013/getval",
+        "http://web:8080/generate_trace?url=https://storageaccountlmlivbbb0.z28.web.core.windows.net/"
     ]
 }

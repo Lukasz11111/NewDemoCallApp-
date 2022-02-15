@@ -16,7 +16,7 @@ services:
     ports:
       - 7000:7000
     environment:
-        REVDEBUG_HOST: ${REVDEBUG_HOST:-newdemo.revdebug.com}
+        REVDEBUG_HOST: ${REVDEBUG_HOST:-livedemo.revdebug.com}
         REVDEBUG_FORCE_TLS:  ${REVDEBUG_FORCE_TLS:-true}
     volumes:
       - .:/app
