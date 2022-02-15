@@ -79,3 +79,4 @@ cython_debug/
 idea/
 CallApp/endpoints.json
 .env
+DataGenerationNewDemoPython/__pycache__/

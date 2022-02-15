@@ -1,9 +1,21 @@
 {
     "minTimeSleep": 200,
     "maxTimeSleep": 320,
+<<<<<<< HEAD
     "callCount": 15,
     "callCountLong": 3,
     "increasedTrafficHours": [3,13,15,18,6],
+=======
+    "callCount": 20,
+    "callCountLong": 4,
+    "increasedTrafficHours": [
+        3,
+        13,
+        15,
+        18,
+        6
+    ],
+>>>>>>> cf341bf922de1be13a954779e85a3d52044c4f2e
     "endpoints": [
         "http://data-generation:7000/IdentityCompanyName?scan_amount=100&increased_traffic=100&minimal_area=0&CountActiveArea=453",
         "http://data-generation:7000/IdentityPerson?scan_amount=400&increased_traffic=50&minimal_area=50&CountActiveArea=345",
@@ -24,7 +36,6 @@
         "http://data-generation:7000/SegregationOfStaticFiles?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=834",
         "http://data-generation:7000/TotalQuestionTime?scan_amount=100&increased_traffic=0&minimal_area=0&CountActiveArea=740",
         "http://data-generation:7000/InternalMemoryEvaluation?scan_amount=400&increased_traffic=80&minimal_area=2&CountActiveArea=958"
-
     ],
     "longEndpoints": [
         "http://data-generation:7000/CollectionOfPrefallState?scan_amount=1000&increased_traffic=-200&minimal_area=450&CountActiveArea=123",
@@ -39,25 +50,23 @@
         "http://data-generation:7000/StateStates?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=423",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
-        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/datafill",
-        "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly",
-         "https://httpex2-rdb.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-rdb.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-rdb.azurewebsites.net/api//api/raportmonthly"
-
-      
-
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
+        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly"
     ],
     "Const": [
         {
+<<<<<<< HEAD
             "url": "http://3.69.48.124:6012/Invoices/Reconcile/$$id$$",
             "id": ["10248","10249","10250","10251","10252","10253","10254","10255","10256","10257"]
         },
@@ -74,6 +83,24 @@
         },
         {
             "url": "http://3.69.48.124:6013/getval"
+=======
+            "url": "http://3.65.26.83:6012/Invoices/Reconcile/$$id$$",
+            "id": ["10248","10249","10250","10251","10252","10253","10254","10255","10256","10257"]
+        },
+        {
+            "url": "http://3.65.26.83:6013/invoices"
+        },
+        {
+            "url": "http://3.65.26.83:6013/invoices/$$id$$/details",
+            "id": ["1","2","3"]
+        },
+        {
+            "url": "http://3.65.26.83:6013/invoices/$$id$$/reconcile/",
+            "id": ["1","2","3"]
+        },
+        {
+            "url": "http://3.65.26.83:6013/getval"
+>>>>>>> cf341bf922de1be13a954779e85a3d52044c4f2e
         },
         {
             "url": "http://web:8080/generate_trace?url=https://storageaccountlmlivbbb0.z28.web.core.windows.net/"
