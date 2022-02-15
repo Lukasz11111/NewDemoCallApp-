@@ -47,8 +47,11 @@ async def req(data, traffic,type_, callType):
 async def reqConst(data):
     try:
         for x in data["Const"]:
-            request_task(x, headers=None)
-        print(f"Calls {x}  type Const", flush=True)
+            if "id" in x:
+                endpoint=str(x["url"]).replace("$$id$$",choice(x["id"]))
+            else:
+                endpoint=str(x["url"])
+            request_task(endpoint, headers=None)
     except Exception as e: 
         print(f"Err {e}", flush=True)
 

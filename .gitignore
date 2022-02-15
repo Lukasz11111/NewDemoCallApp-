@@ -78,3 +78,4 @@ dmypy.json
 cython_debug/
 idea/
 CallApp/endpoints.json
+.env

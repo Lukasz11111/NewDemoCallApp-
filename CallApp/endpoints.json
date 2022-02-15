@@ -57,11 +57,26 @@
 
     ],
     "Const": [
-        "http://3.69.48.124:6012/Invoices/Reconcile/10252",
-        "http://3.69.48.124:6013/invoices",
-        "http://3.69.48.124:6013/invoices/1/details",
-        "http://3.69.48.124:6013/invoices/1/reconcile/",
-        "http://3.69.48.124:6013/getval",
-        "http://web:8080/generate_trace"
+        {
+            "url": "http://3.69.48.124:6012/Invoices/Reconcile/$$id$$",
+            "id": ["10248","10249","10250","10251","10252","10253","10254","10255","10256","10257"]
+        },
+        {
+            "url": "http://3.69.48.124:6013/invoices"
+        },
+        {
+            "url": "http://3.69.48.124:6013/invoices/$$id$$/details",
+            "id": ["1","2","3"]
+        },
+        {
+            "url": "http://3.69.48.124:6013/invoices/$$id$$/reconcile/",
+            "id": ["1","2","3"]
+        },
+        {
+            "url": "http://3.69.48.124:6013/getval"
+        },
+        {
+            "url": "http://web:8080/generate_trace?url=https://storageaccountlmlivbbb0.z28.web.core.windows.net/"
+        }
     ]
 }
