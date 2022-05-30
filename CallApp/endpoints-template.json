@@ -44,19 +44,19 @@
         "http://data-generation:7000/StateStates?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=423",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
         "http://data-generation:7000/DatabaseBackupOfAllFirstOccurrences?scan_amount=750&increased_traffic=234&minimal_area=65&CountActiveArea=234",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/datafill",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/postdatacheckhook",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api/checkdataintegrity",
-        "https://httpex2-livedemoazurefn.azurewebsites.net/api//api/raportmonthly"
+        "https://url-azure-demo-app/api/postdatacheckhook",
+        "https://url-azure-demo-app/api/checkdataintegrity",
+        "https://url-azure-demo-app/api//api/raportmonthly",
+        "https://url-azure-demo-app/api/datafill",
+        "https://url-azure-demo-app/api/datafill",
+        "https://url-azure-demo-app/api/datafill",
+        "https://url-azure-demo-app/api/datafill",
+        "https://url-azure-demo-app/api/postdatacheckhook",
+        "https://url-azure-demo-app/api/checkdataintegrity",
+        "https://url-azure-demo-app/api//api/raportmonthly",
+        "https://url-azure-demo-app/api/postdatacheckhook",
+        "https://url-azure-demo-app/api/checkdataintegrity",
+        "https://url-azure-demo-app/api//api/raportmonthly"
     ],
     "Const": [
         {
@@ -78,7 +78,7 @@
             "url": "http://192.168.2.1:6013/getval"
         },
         {
-            "url": "http://web:8080/generate_trace?url=https://storageaccountlmlivbbb0.z28.web.core.windows.net/"
+            "url": "http://web:8080/generate_trace?url=https://url-azure-demo-app"
         }
     ]
 }
