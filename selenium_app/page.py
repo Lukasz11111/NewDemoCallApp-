@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.webelement import WebElement
+from selenium.webdriver.support.ui import Select
 from twiggy import log
 
 from settings import REMOTE_DRIVER, ENDING_SLEEPING_TIME
@@ -78,6 +79,12 @@ class Page:
             self.number_input.send_keys(str(i))
             sleep(.2)
         sleep(1)
+    
+    def select_region(self,value):
+        select = Select(self.region)
+        select.select_by_visible_text(value)
+        
+        sleep(1)
 
     def __enter__(self):
         log.debug("Enter Page >>>>>>>>>>>>>>")
@@ -94,6 +101,7 @@ class Page:
         log.debug("Exit Page >>>>>>>>>>>>>>")
 
     def _set_webelements(self):
+        self.region = self._driver.find_element_by_id("region")
         self.account = self._driver.find_element_by_link_text("Accounts")
         self.about = self._driver.find_element_by_link_text("About")
         self.header = self._driver.find_element_by_tag_name("h2")
