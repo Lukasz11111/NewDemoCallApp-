@@ -38,7 +38,7 @@ async def generate_trace(url: Optional[str] = DEFAULT_URL):
         page.move(page.account, page.select) and sleep(1)
 
         page.select_region("Japan")
-        
+
         page.select_many_times_options()
         page.move(page.select, page.number_input) and sleep(1)
         page.click()
@@ -49,6 +49,7 @@ async def generate_trace(url: Optional[str] = DEFAULT_URL):
     end = time()
     log.debug(F"generate_trace({url} end at {start} in {end - start}")
     return {"url": url, "time": end - start}
+
 
 @app.get("/generate_trace_django/")
 async def generate_trace_django(url: Optional[str] = DEFAULT_URL):
@@ -57,12 +58,9 @@ async def generate_trace_django(url: Optional[str] = DEFAULT_URL):
     with Page(url) as page:
         page.move_to_account()
         page.move(page.account, page.about)
-        # page.move(page.about, page.header, subpoints=4, time=0) and sleep(0.5)
-        # page.move(page.header, page.select) and sleep(1)
-        page.move(page.account, page.select) and sleep(1)
-
-        page.select_region("Pacific")
-
+        page.move(page.account, page.region) and sleep(1)
+        page.click()
+        page.move(page.region, page.select) and sleep(1)
         page.select_many_times_options()
         page.move(page.select, page.number_input) and sleep(1)
         page.click()
@@ -73,6 +71,7 @@ async def generate_trace_django(url: Optional[str] = DEFAULT_URL):
     end = time()
     log.debug(F"generate_trace({url} end at {start} in {end - start}")
     return {"url": url, "time": end - start}
+
 
 @app.get("/", include_in_schema=False)
 async def root():
