@@ -42,6 +42,7 @@ class Page:
         self.select: WebElement = None
         self.number_input: WebElement = None
         self.button: WebElement = None
+        self.region: WebElement = None
         self._driver: webdriver = None
         self.url: str = url
 
@@ -108,3 +109,4 @@ class Page:
         self.select = self._driver.find_element_by_tag_name("select")
         self.number_input = self._driver.find_element_by_id("minvalue")
         self.button = self._driver.find_element_by_id("send")
+        self.region = self._driver.find_element_by_id("region")
