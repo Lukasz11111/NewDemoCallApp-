@@ -25,6 +25,7 @@ services:
     networks:
       - demo_net
   selenium-standalone-chrome:
+    # vnc on port 7900, default password: secret
     image: selenium/standalone-chrome
     ports:
       - 4444:4444
