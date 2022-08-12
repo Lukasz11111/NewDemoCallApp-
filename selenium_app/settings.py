@@ -1,6 +1,6 @@
 from twiggy import levels
 
-DEFAULT_URL: str = "https://rdb-test.ddns.net/"
+DEFAULT_URL: str = "https://testapps.tryrevdebug.com/"
 REMOTE_DRIVER_IP: str = "selenium-standalone-chrome"
 REMOTE_DRIVER_PORT: int = 4444
 REMOTE_DRIVER: str = F"http://{REMOTE_DRIVER_IP}:{REMOTE_DRIVER_PORT}/wd/hub"

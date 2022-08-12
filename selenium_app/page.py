@@ -60,12 +60,22 @@ class Page:
         action_chains.move_to_element(end).pause(sleep_time)
         action_chains.perform()
 
+    def select_region(self,value):
+        action_chains = webdriver.ActionChains(self._driver)
+        if value=="Japan":
+            action_chains.move_by_offset(-20, -20).pause(0.25).click().pause(0.25)
+            action_chains.move_by_offset(0, 73).pause(0.25).click().pause(0.25)
+        if value=="Pacific":
+            action_chains.move_by_offset(-10, 0).pause(0.25).click().pause(0.25)
+            action_chains.move_by_offset(0, 50).pause(0.25).click().pause(0.25)
+        action_chains.perform()
+
+
     def select_many_times_options(self):
         action_chains = webdriver.ActionChains(self._driver)
-        action_chains.move_by_offset(15, -60).pause(0.25).click().pause(0.25)
+        action_chains.move_by_offset(15, 60).pause(0.25).click().pause(0.25)
         action_chains.move_by_offset(-10, 30).pause(0.25).click().pause(0.25)
-        action_chains.move_by_offset(10, 90).pause(0.25).click().pause(0.25)
-        action_chains.move_by_offset(10, -160).pause(0.25).click().pause(0.25)
+        action_chains.move_by_offset(10, -90).pause(0.25).click().pause(0.25)
         action_chains.perform()
 
     def click(self):
@@ -81,11 +91,11 @@ class Page:
             sleep(.2)
         sleep(1)
     
-    def select_region(self,value):
-        select = Select(self.region)
-        select.select_by_visible_text(value)
+    # def select_region(self,value):
+    #     select = Select(self.region)
+    #     select.select_by_visible_text(value)
         
-        sleep(1)
+    #     sleep(1)
 
     def __enter__(self):
         log.debug("Enter Page >>>>>>>>>>>>>>")

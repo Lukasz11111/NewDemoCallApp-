@@ -58,9 +58,11 @@ async def generate_trace_django(url: Optional[str] = DEFAULT_URL):
     with Page(url) as page:
         page.move_to_account()
         page.move(page.account, page.about)
-        page.move(page.account, page.region) and sleep(1)
-        page.click()
-        page.move(page.region, page.select) and sleep(1)
+        page.move(page.account, page.select) and sleep(1)
+        
+        page.select_region("Pacific")
+
+        
         page.select_many_times_options()
         page.move(page.select, page.number_input) and sleep(1)
         page.click()
