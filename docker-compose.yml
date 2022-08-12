@@ -27,6 +27,11 @@ services:
   selenium-standalone-chrome:
     # vnc on port 7900, default password: secret
     image: selenium/standalone-chrome
+    # environment:
+    #   SE_SCREEN_WIDTH: 1700
+    #   SE_SCREEN_HEIGHT: 1200
+    #   SE_SCREEN_DEPTH: 24
+    #   SE_SCREEN_DPI: 74
     ports:
       - 4444:4444
       - 7900:7900
@@ -42,6 +47,8 @@ services:
     command: uvicorn --host=0.0.0.0 --port=8080 main:app
     networks:
       - demo_net
+    volumes:
+      - ./selenium_app/:/app
 
 
 networks:

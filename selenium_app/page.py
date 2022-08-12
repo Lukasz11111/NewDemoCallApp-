@@ -46,6 +46,10 @@ class Page:
         self._driver: webdriver = None
         self.url: str = url
 
+    def moveToRegion(self):
+        action_chains = webdriver.ActionChains(self._driver)
+        action_chains.move_by_offset(-200, -200).pause(0.25).click().pause(0.25)
+
     def move(self, begin: WebElement, end: WebElement, subpoints: int = 10, time: float = 0.1):
         """Move from begin webelement to end webelement in 10 setes in 0.1s"""
         log.debug(F"Move from {begin} to {end}")
@@ -81,12 +85,15 @@ class Page:
     def click(self):
         webdriver.ActionChains(self._driver).click().perform()
 
+    def clickOnSend(self):
+        self.button.click()
+
     def move_to_account(self):
         webdriver.ActionChains(self._driver).move_to_element(self.account).perform()
 
     def fill_number(self):
         sleep(1)
-        for i in "14000" + 5 * Keys.BACKSPACE + "15000":
+        for i in "14000" + 4 * Keys.BACKSPACE + "5000":
             self.number_input.send_keys(str(i))
             sleep(.2)
         sleep(1)
@@ -101,6 +108,7 @@ class Page:
         log.debug("Enter Page >>>>>>>>>>>>>>")
         self._driver = webdriver.Remote(REMOTE_DRIVER,
                                         DesiredCapabilities.CHROME)
+        self._driver.set_window_size(1700,1200)                             
         self._driver.get(self.url)
         self._set_webelements()
         return self

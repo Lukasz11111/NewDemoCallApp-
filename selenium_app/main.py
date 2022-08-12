@@ -28,14 +28,17 @@ log.info("Server started with version {VERSION}", VERSION=VERSION)
 
 @app.get("/generate_trace/")
 async def generate_trace(url: Optional[str] = DEFAULT_URL):
+    
     start = time()
+
     log.debug("generate_trace({url} start at {start}", url=url, start=start)
     with Page(url) as page:
-        page.move_to_account()
-        page.move(page.account, page.about)
+        # page.move_to_account()
+        # page.move(page.account, page.about)
         # page.move(page.about, page.header, subpoints=4, time=0) and sleep(0.5)
         # page.move(page.header, page.select) and sleep(1)
-        page.move(page.account, page.select) and sleep(1)
+        page.moveToRegion()
+        page.move(page.region, page.select,subpoints=4, time=0) and sleep(1)
 
         page.select_region("Japan")
 
